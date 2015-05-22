@@ -122,6 +122,7 @@
 				8F4E051F1B0E0B7E0007A06F /* Sources */,
 				8F4E05201B0E0B7E0007A06F /* Frameworks */,
 				8F4E05211B0E0B7E0007A06F /* Resources */,
+				8F4E05481B0E0B870007A06F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -206,6 +207,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F4E05481B0E0B870007A06F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F4E051F1B0E0B7E0007A06F /* Sources */ = {
@@ -409,6 +426,7 @@
 				8F4E05441B0E0B7E0007A06F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F4E05451B0E0B7E0007A06F /* Build configuration list for PBXNativeTarget "iMSTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +435,7 @@
 				8F4E05471B0E0B7E0007A06F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
