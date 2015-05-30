@@ -461,10 +461,10 @@
 				8F4E051F1B0E0B7E0007A06F /* Sources */,
 				8F4E05201B0E0B7E0007A06F /* Frameworks */,
 				8F4E05211B0E0B7E0007A06F /* Resources */,
-				8F4E05481B0E0B870007A06F /* ShellScript */,
 				42ECE93D495BABB83F16EA06 /* Embed Pods Frameworks */,
 				C3E273384F357FCAAD11BB47 /* Copy Pods Resources */,
 				8F70B2EC1B19B6BE007D97CA /* ShellScript */,
+				8F70B35B1B1A0DB2007D97CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -504,6 +504,7 @@
 				TargetAttributes = {
 					8F4E05221B0E0B7E0007A06F = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 2K5477L82X;
 					};
 					8F4E05371B0E0B7E0007A06F = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -678,19 +679,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F4E05481B0E0B870007A06F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
-		};
 		8F70B2EC1B19B6BE007D97CA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -703,6 +691,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run e6eb162f29a7bd9acaea0065c912ae9fcec1f7f6 447172784342334e3d894c3624ae4504c62ec728a6a45034f7fb625257e3e650";
+		};
+		8F70B35B1B1A0DB2007D97CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
 		C3E273384F357FCAAD11BB47 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -866,7 +867,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/iMSTests/Info.plist";
+				INFOPLIST_FILE = /Volumes/Transcend/iOS/iMS/iMS/Base.lproj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -890,7 +891,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/iMSTests/Info.plist";
+				INFOPLIST_FILE = /Volumes/Transcend/iOS/iMS/iMS/Base.lproj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
