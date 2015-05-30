@@ -1,25 +1,376 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="iMS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="Hyn-d1-Vui">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F15" translatesAutoresizingMaskIntoConstraints="NO" id="8JO-un-1cw" userLabel="MusicNote" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="17" y="172" width="341" height="269"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ed-Mz-PLF" userLabel="KeyBoard">
+                                <rect key="frame" x="-4" y="449" width="383" height="218"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP1-R3-DZA" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="20" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="C" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="C" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kao-A3-NSi"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="zOQ-X2-5A5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVX-Jj-KsX" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="69" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="D" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="D" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="opu-EA-t3S"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="kRQ-As-yu4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-SX-Xoi" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="118" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="E" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="E" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZB7-G5-uSN"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="HGa-I3-C1E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFc-EF-IyJ" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="167" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="F" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="F" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TS5-6X-n3m"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="yft-rC-Y5n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipf-4z-eH8" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="215" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="G" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="G" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Xt-et-zVN"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="g9y-x4-ZSH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJd-eN-xoI" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="264" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="A" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="A" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lN5-kq-J4k"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="S1K-fj-Gfx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lem-uw-ZPa" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="313" y="10" width="50" height="200"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                        <state key="normal" title="B" backgroundImage="ButtonWhite">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="B" backgroundImage="ButtonPressed"/>
+                                        <connections>
+                                            <action selector="keyBoardPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f5C-hi-DgB"/>
+                                            <action selector="keyBoardTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="FhM-nN-MZf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-SS-e3Q" userLabel="BlackButton">
+                                        <rect key="frame" x="53" y="10" width="34" height="130"/>
+                                        <state key="normal" backgroundImage="ButtonBlack">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEV-e7-V6o" userLabel="BlackButton">
+                                        <rect key="frame" x="102" y="10" width="34" height="130"/>
+                                        <state key="normal" backgroundImage="ButtonBlack">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPw-XQ-Onn" userLabel="BlackButton">
+                                        <rect key="frame" x="199" y="10" width="34" height="130"/>
+                                        <state key="normal" backgroundImage="ButtonBlack">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAU-kp-Icg" userLabel="BlackButton">
+                                        <rect key="frame" x="247" y="10" width="34" height="130"/>
+                                        <state key="normal" backgroundImage="ButtonBlack">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-uK-pub" userLabel="BlackButton">
+                                        <rect key="frame" x="297" y="10" width="34" height="130"/>
+                                        <state key="normal" backgroundImage="ButtonBlack">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lem-uw-ZPa" secondAttribute="trailing" constant="20" id="0IH-ya-q41"/>
+                                    <constraint firstItem="AVX-Jj-KsX" firstAttribute="top" secondItem="QEV-e7-V6o" secondAttribute="top" id="1Bg-3B-90q"/>
+                                    <constraint firstItem="qAU-kp-Icg" firstAttribute="top" secondItem="LPw-XQ-Onn" secondAttribute="top" id="22K-Vl-YWJ"/>
+                                    <constraint firstItem="LPw-XQ-Onn" firstAttribute="leading" secondItem="OFc-EF-IyJ" secondAttribute="trailing" constant="-18" id="3w8-Fc-saa"/>
+                                    <constraint firstItem="4zA-SX-Xoi" firstAttribute="top" secondItem="AVX-Jj-KsX" secondAttribute="top" id="4j3-91-KmV"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="width" secondItem="OFc-EF-IyJ" secondAttribute="width" id="5Un-Yv-ffv"/>
+                                    <constraint firstItem="RBX-SS-e3Q" firstAttribute="width" secondItem="QEV-e7-V6o" secondAttribute="width" id="70j-eL-jmo"/>
+                                    <constraint firstItem="lem-uw-ZPa" firstAttribute="top" secondItem="MJd-eN-xoI" secondAttribute="top" id="7tP-bi-hDx"/>
+                                    <constraint firstItem="OP1-R3-DZA" firstAttribute="width" secondItem="RBX-SS-e3Q" secondAttribute="height" multiplier="5:13" id="9zD-uT-Ihv"/>
+                                    <constraint firstItem="OFc-EF-IyJ" firstAttribute="top" secondItem="4zA-SX-Xoi" secondAttribute="top" id="Ai6-4a-5zH"/>
+                                    <constraint firstItem="AVX-Jj-KsX" firstAttribute="width" secondItem="OP1-R3-DZA" secondAttribute="width" id="CRE-vD-Ps9"/>
+                                    <constraint firstItem="4zA-SX-Xoi" firstAttribute="leading" secondItem="AVX-Jj-KsX" secondAttribute="trailing" constant="-1" id="CRi-UJ-VIJ"/>
+                                    <constraint firstItem="RBX-SS-e3Q" firstAttribute="height" secondItem="QEV-e7-V6o" secondAttribute="height" id="CZf-Cu-i1f"/>
+                                    <constraint firstItem="QEV-e7-V6o" firstAttribute="top" secondItem="LPw-XQ-Onn" secondAttribute="top" id="D3z-bN-HT9"/>
+                                    <constraint firstItem="4zA-SX-Xoi" firstAttribute="width" secondItem="AVX-Jj-KsX" secondAttribute="width" id="Fc6-SL-21f"/>
+                                    <constraint firstItem="bo1-uK-pub" firstAttribute="height" secondItem="qAU-kp-Icg" secondAttribute="height" id="GbB-ca-m3c"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="leading" secondItem="OFc-EF-IyJ" secondAttribute="trailing" constant="-2" id="HLn-w9-4Xf"/>
+                                    <constraint firstItem="bo1-uK-pub" firstAttribute="leading" secondItem="MJd-eN-xoI" secondAttribute="trailing" constant="-17" id="IV8-i6-XU8"/>
+                                    <constraint firstItem="qAU-kp-Icg" firstAttribute="height" secondItem="LPw-XQ-Onn" secondAttribute="height" id="J4V-J1-UbP"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="height" secondItem="OFc-EF-IyJ" secondAttribute="height" id="M2J-Ez-hoI"/>
+                                    <constraint firstItem="QEV-e7-V6o" firstAttribute="width" secondItem="LPw-XQ-Onn" secondAttribute="width" id="MSd-uN-bRn"/>
+                                    <constraint firstItem="bo1-uK-pub" firstAttribute="width" secondItem="qAU-kp-Icg" secondAttribute="width" id="Mij-YM-KQH"/>
+                                    <constraint firstItem="lem-uw-ZPa" firstAttribute="width" secondItem="MJd-eN-xoI" secondAttribute="width" id="Q0k-pt-c5p"/>
+                                    <constraint firstAttribute="bottom" secondItem="OP1-R3-DZA" secondAttribute="bottom" constant="8" id="QFa-Ua-Syv"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="width" secondItem="MJd-eN-xoI" secondAttribute="width" id="RrI-bw-Odl"/>
+                                    <constraint firstItem="lem-uw-ZPa" firstAttribute="leading" secondItem="MJd-eN-xoI" secondAttribute="trailing" constant="-1" id="T1I-rm-Cyy"/>
+                                    <constraint firstItem="AVX-Jj-KsX" firstAttribute="height" secondItem="OP1-R3-DZA" secondAttribute="height" id="UI4-5N-OJi"/>
+                                    <constraint firstItem="OP1-R3-DZA" firstAttribute="top" secondItem="8ed-Mz-PLF" secondAttribute="top" constant="10" id="VTm-7g-Gzn"/>
+                                    <constraint firstItem="QEV-e7-V6o" firstAttribute="height" secondItem="LPw-XQ-Onn" secondAttribute="height" id="WYZ-jL-Ocq"/>
+                                    <constraint firstItem="qAU-kp-Icg" firstAttribute="width" secondItem="LPw-XQ-Onn" secondAttribute="width" id="af4-Ze-A8h"/>
+                                    <constraint firstItem="RBX-SS-e3Q" firstAttribute="leading" secondItem="OP1-R3-DZA" secondAttribute="trailing" constant="-17" id="aom-Op-lxj"/>
+                                    <constraint firstItem="qAU-kp-Icg" firstAttribute="leading" secondItem="Ipf-4z-eH8" secondAttribute="trailing" constant="-18" id="bdm-CB-7ks"/>
+                                    <constraint firstItem="MJd-eN-xoI" firstAttribute="leading" secondItem="Ipf-4z-eH8" secondAttribute="trailing" constant="-1" id="g5j-A7-u0C"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="height" secondItem="MJd-eN-xoI" secondAttribute="height" id="gJZ-tC-RrQ"/>
+                                    <constraint firstItem="AVX-Jj-KsX" firstAttribute="top" secondItem="OP1-R3-DZA" secondAttribute="top" id="iHa-oZ-fZZ"/>
+                                    <constraint firstItem="bo1-uK-pub" firstAttribute="top" secondItem="qAU-kp-Icg" secondAttribute="top" id="jIP-Vy-dr4"/>
+                                    <constraint firstItem="OFc-EF-IyJ" firstAttribute="height" secondItem="4zA-SX-Xoi" secondAttribute="height" id="k0Y-PQ-gor"/>
+                                    <constraint firstItem="OP1-R3-DZA" firstAttribute="leading" secondItem="8ed-Mz-PLF" secondAttribute="leading" constant="20" id="oEc-WY-1ZU"/>
+                                    <constraint firstItem="4zA-SX-Xoi" firstAttribute="height" secondItem="AVX-Jj-KsX" secondAttribute="height" id="pNe-Y3-d8z"/>
+                                    <constraint firstItem="OFc-EF-IyJ" firstAttribute="width" secondItem="4zA-SX-Xoi" secondAttribute="width" id="puO-3W-gH8"/>
+                                    <constraint firstItem="QEV-e7-V6o" firstAttribute="leading" secondItem="AVX-Jj-KsX" secondAttribute="trailing" constant="-17" id="r6H-5u-Sao"/>
+                                    <constraint firstItem="lem-uw-ZPa" firstAttribute="height" secondItem="MJd-eN-xoI" secondAttribute="height" id="sae-YG-v1b"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="top" secondItem="OFc-EF-IyJ" secondAttribute="top" id="tUw-dn-6Y8"/>
+                                    <constraint firstItem="Ipf-4z-eH8" firstAttribute="top" secondItem="MJd-eN-xoI" secondAttribute="top" id="vfz-jX-UDh"/>
+                                    <constraint firstItem="OP1-R3-DZA" firstAttribute="top" secondItem="RBX-SS-e3Q" secondAttribute="top" id="wet-CB-N01"/>
+                                    <constraint firstItem="OFc-EF-IyJ" firstAttribute="leading" secondItem="4zA-SX-Xoi" secondAttribute="trailing" constant="-1" id="yLe-G5-Ymb"/>
+                                    <constraint firstItem="AVX-Jj-KsX" firstAttribute="leading" secondItem="OP1-R3-DZA" secondAttribute="trailing" constant="-1" id="zBF-oB-JeG"/>
+                                    <constraint firstAttribute="width" secondItem="8ed-Mz-PLF" secondAttribute="height" multiplier="383:218" id="zSy-bs-pzG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-DX-MhX" userLabel="TopArea">
+                                <rect key="frame" x="0.0" y="20" width="375" height="144"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G-Clef" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14w-1n-z5A" userLabel="ClefLabel" customClass="SpringLabel" customModule="Spring">
+                                        <rect key="frame" x="132" y="19" width="122" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="Qef-Tq-s4S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="V" translatesAutoresizingMaskIntoConstraints="NO" id="XM8-IH-sqi" customClass="SpringImageView" customModule="Spring">
+                                        <rect key="frame" x="140" y="76" width="26" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="kbP-bI-Azl"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLt-Z9-RxV" customClass="SpringLabel" customModule="Spring">
+                                        <rect key="frame" x="59" y="68" width="72.5" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72.5" id="Fzs-f8-rxa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        <color key="textColor" red="0.50149615033900818" green="1" blue="0.50742154297685982" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19f-Nw-87n" customClass="SpringLabel" customModule="Spring">
+                                        <rect key="frame" x="190" y="68" width="72.5" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72.5" id="4g6-WQ-Yps"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        <color key="textColor" red="1" green="0.43946799289999999" blue="0.61113867990000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="0.59999999999999998"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="X" translatesAutoresizingMaskIntoConstraints="NO" id="pZS-e5-5YB" customClass="SpringImageView" customModule="Spring">
+                                        <rect key="frame" x="270" y="76" width="34" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="Fox-pm-5by"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gan-5o-gGH" userLabel="ClefButton" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="96" y="15" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="DTw-QC-XTY"/>
+                                        </constraints>
+                                        <state key="normal" image="music_note_pointer">
+                                            <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="1.2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clefButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pof-9M-LJG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pZS-e5-5YB" secondAttribute="trailing" constant="71" id="8fX-cD-FA5"/>
+                                    <constraint firstItem="XM8-IH-sqi" firstAttribute="centerY" secondItem="gLt-Z9-RxV" secondAttribute="centerY" constant="0.5" id="EeU-gF-tkI"/>
+                                    <constraint firstAttribute="centerX" secondItem="gan-5o-gGH" secondAttribute="centerX" constant="11.5" id="VWa-lz-Zhq"/>
+                                    <constraint firstItem="gLt-Z9-RxV" firstAttribute="leading" secondItem="CsE-DX-MhX" secondAttribute="leading" constant="59" id="X0d-o7-rg3"/>
+                                    <constraint firstItem="14w-1n-z5A" firstAttribute="centerY" secondItem="gan-5o-gGH" secondAttribute="centerY" constant="0.5" id="cVr-W5-X7k"/>
+                                    <constraint firstItem="gan-5o-gGH" firstAttribute="top" secondItem="CsE-DX-MhX" secondAttribute="top" constant="15" id="dZV-o2-AmO"/>
+                                    <constraint firstItem="XM8-IH-sqi" firstAttribute="leading" secondItem="gLt-Z9-RxV" secondAttribute="trailing" constant="8.5" id="euN-aX-Bcj"/>
+                                    <constraint firstItem="gLt-Z9-RxV" firstAttribute="top" secondItem="gan-5o-gGH" secondAttribute="bottom" constant="8" id="h7t-b9-LH8"/>
+                                    <constraint firstItem="19f-Nw-87n" firstAttribute="leading" secondItem="XM8-IH-sqi" secondAttribute="trailing" constant="24" id="jbc-5a-BTY"/>
+                                    <constraint firstItem="gan-5o-gGH" firstAttribute="centerX" secondItem="XM8-IH-sqi" secondAttribute="centerX" constant="23" id="mXV-bK-9JZ"/>
+                                    <constraint firstItem="14w-1n-z5A" firstAttribute="leading" secondItem="gan-5o-gGH" secondAttribute="trailing" constant="-124" id="oyF-AN-4Nx"/>
+                                    <constraint firstItem="19f-Nw-87n" firstAttribute="centerY" secondItem="XM8-IH-sqi" secondAttribute="centerY" constant="-0.5" id="sjb-C1-YX6"/>
+                                    <constraint firstItem="pZS-e5-5YB" firstAttribute="leading" secondItem="19f-Nw-87n" secondAttribute="trailing" constant="7.5" id="tTw-CM-G7D"/>
+                                    <constraint firstItem="19f-Nw-87n" firstAttribute="centerY" secondItem="pZS-e5-5YB" secondAttribute="centerY" constant="-0.5" id="z7l-zR-ZQb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="X0d-o7-rg3"/>
+                                        <exclude reference="8fX-cD-FA5"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hyn-d1-Vui" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="0QA-Z5-8Pz"/>
+                            <constraint firstItem="Hyn-d1-Vui" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="0Vk-UM-aMY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CsE-DX-MhX" secondAttribute="trailing" constant="-16" id="2Wo-q4-qKg"/>
+                            <constraint firstItem="CsE-DX-MhX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="HLH-xl-h6q"/>
+                            <constraint firstItem="8JO-un-1cw" firstAttribute="top" secondItem="CsE-DX-MhX" secondAttribute="bottom" constant="8" id="IIV-VI-Qba"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hyn-d1-Vui" secondAttribute="trailing" constant="-16" id="Lt3-BQ-wLO"/>
+                            <constraint firstItem="8JO-un-1cw" firstAttribute="width" secondItem="CsE-DX-MhX" secondAttribute="height" multiplier="341:144" id="QjH-Wh-ovn"/>
+                            <constraint firstItem="8ed-Mz-PLF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="RAK-Ig-2PS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Hyn-d1-Vui" secondAttribute="bottom" id="XJB-mm-jFs"/>
+                            <constraint firstItem="8JO-un-1cw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="1" id="dmq-Gp-y03"/>
+                            <constraint firstItem="CsE-DX-MhX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="eAB-n5-Iie"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8ed-Mz-PLF" secondAttribute="bottom" id="hhW-R7-Pyr"/>
+                            <constraint firstItem="8ed-Mz-PLF" firstAttribute="top" secondItem="8JO-un-1cw" secondAttribute="bottom" constant="8" id="riI-ZD-T8D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8ed-Mz-PLF" secondAttribute="trailing" constant="-20" id="sTb-fR-950"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8JO-un-1cw" secondAttribute="trailing" constant="1" id="yhu-9o-esc"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="clefLabel" destination="14w-1n-z5A" id="Da1-bT-uRW"/>
+                        <outlet property="musicNoteImageView" destination="8JO-un-1cw" id="eex-9f-Sgr"/>
+                        <outlet property="rightAnswerLabel" destination="gLt-Z9-RxV" id="97T-3c-t7i"/>
+                        <outlet property="wrongAnswerLabel" destination="19f-Nw-87n" id="2jk-Zs-0T6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="260.5" y="409.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BG" width="375" height="667"/>
+        <image name="ButtonBlack" width="34" height="130"/>
+        <image name="ButtonPressed" width="50" height="200"/>
+        <image name="ButtonWhite" width="50" height="200"/>
+        <image name="F15" width="341" height="222"/>
+        <image name="V" width="26" height="36"/>
+        <image name="X" width="34" height="36"/>
+        <image name="music_note_pointer" width="27" height="45"/>
+    </resources>
 </document>
