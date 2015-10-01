@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="Hyn-d1-Vui">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ed-Mz-PLF" userLabel="KeyBoard">
                                 <rect key="frame" x="-9" y="467" width="391" height="200"/>
@@ -295,7 +295,7 @@
                             <constraint firstItem="CsE-DX-MhX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="nSU-v8-HUc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8JO-un-1cw" secondAttribute="trailing" constant="-3" id="vnH-Ew-30m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8ed-Mz-PLF" secondAttribute="trailing" constant="-23" id="w5f-x5-Hce"/>
-                            <constraint firstItem="Hyn-d1-Vui" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="zK4-WM-3xC"/>
+                            <constraint firstItem="Hyn-d1-Vui" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-1" id="zK4-WM-3xC"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

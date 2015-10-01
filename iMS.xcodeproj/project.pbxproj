@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		066CC59A73E2418FCFA62EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBA88A7B7A768404EF9240 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F24D41C1B0F875D00F05394 /* clefList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F24D41B1B0F875D00F05394 /* clefList.plist */; };
+		8F3DC5361BBD3056000D1E99 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F3DC5381BBD3056000D1E99 /* InfoPlist.strings */; };
 		8F4E05291B0E0B7E0007A06F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E05281B0E0B7E0007A06F /* AppDelegate.swift */; };
 		8F4E052B1B0E0B7E0007A06F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E052A1B0E0B7E0007A06F /* ViewController.swift */; };
 		8F4E052E1B0E0B7E0007A06F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4E052C1B0E0B7E0007A06F /* Main.storyboard */; };
@@ -121,7 +122,6 @@
 		8F7284361BBD11DE0043A171 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284341BBD11DE0043A171 /* EventKit.framework */; };
 		8F7284371BBD11DE0043A171 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284351BBD11DE0043A171 /* EventKitUI.framework */; };
 		8F7284391BBD11E40043A171 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284381BBD11E40043A171 /* MessageUI.framework */; };
-		8F72843B1BBD11EC0043A171 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72843A1BBD11EC0043A171 /* StoreKit.framework */; };
 		8F72843D1BBD11F10043A171 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72843C1BBD11F10043A171 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +140,10 @@
 		821D71495E5B9698FB7FE41A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8CDBA88A7B7A768404EF9240 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F24D41B1B0F875D00F05394 /* clefList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = clefList.plist; sourceTree = "<group>"; };
+		8F3DC5371BBD3056000D1E99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F3DC5391BBD3063000D1E99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F3DC53A1BBD306A000D1E99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		8F3DC53B1BBD3073000D1E99 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8F4E05231B0E0B7E0007A06F /* iMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4E05281B0E0B7E0007A06F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F4E052A1B0E0B7E0007A06F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -257,7 +261,6 @@
 		8F7284341BBD11DE0043A171 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8F7284351BBD11DE0043A171 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		8F7284381BBD11E40043A171 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		8F72843A1BBD11EC0043A171 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8F72843C1BBD11F10043A171 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -267,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F72843D1BBD11F10043A171 /* SystemConfiguration.framework in Frameworks */,
-				8F72843B1BBD11EC0043A171 /* StoreKit.framework in Frameworks */,
 				8F7284391BBD11E40043A171 /* MessageUI.framework in Frameworks */,
 				8F7284361BBD11DE0043A171 /* EventKit.framework in Frameworks */,
 				8F7284371BBD11DE0043A171 /* EventKitUI.framework in Frameworks */,
@@ -295,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				8F72843C1BBD11F10043A171 /* SystemConfiguration.framework */,
-				8F72843A1BBD11EC0043A171 /* StoreKit.framework */,
 				8F7284381BBD11E40043A171 /* MessageUI.framework */,
 				8F7284341BBD11DE0043A171 /* EventKit.framework */,
 				8F7284351BBD11DE0043A171 /* EventKitUI.framework */,
@@ -367,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				8F70B3571B19F272007D97CA /* Info.plist */,
+				8F3DC5381BBD3056000D1E99 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -541,6 +543,11 @@
 					8F4E05221B0E0B7E0007A06F = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = 2K5477L82X;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					8F4E05371B0E0B7E0007A06F = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -555,6 +562,8 @@
 			knownRegions = (
 				Base,
 				en,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 8F4E051A1B0E0B7E0007A06F;
 			productRefGroup = 8F4E05241B0E0B7E0007A06F /* Products */;
@@ -572,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3DC5361BBD3056000D1E99 /* InfoPlist.strings in Resources */,
 				8F70B2CD1B198979007D97CA /* f4m.mp3 in Resources */,
 				8F70B2DE1B198979007D97CA /* g6.mp3 in Resources */,
 				8F70B2B31B198979007D97CA /* d2.mp3 in Resources */,
@@ -775,6 +785,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8F3DC5381BBD3056000D1E99 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F3DC5371BBD3056000D1E99 /* Base */,
+				8F3DC5391BBD3063000D1E99 /* en */,
+				8F3DC53A1BBD306A000D1E99 /* zh-Hans */,
+				8F3DC53B1BBD3073000D1E99 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		8F4E052C1B0E0B7E0007A06F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
