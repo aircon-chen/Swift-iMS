@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 import iRate
 
 @UIApplicationMain
@@ -21,15 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        Fabric.with([Crashlytics()])
         iRate.sharedInstance().applicationBundleID = "com.aircon.iMS"
         iRate.sharedInstance().onlyPromptIfLatestVersion = false
         iRate.sharedInstance().daysUntilPrompt = 0.5
         iRate.sharedInstance().usesUntilPrompt = 3
 //        iRate.sharedInstance().previewMode = true
-
-    
         return true
     }
 

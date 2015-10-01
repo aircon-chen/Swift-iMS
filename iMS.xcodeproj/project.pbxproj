@@ -15,6 +15,7 @@
 		8F4E05301B0E0B7E0007A06F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F4E052F1B0E0B7E0007A06F /* Images.xcassets */; };
 		8F4E053F1B0E0B7E0007A06F /* iMSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E053E1B0E0B7E0007A06F /* iMSTests.swift */; };
 		8F553DD11B1753B400E215F5 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F553DD01B1753B400E215F5 /* SuperViewController.swift */; };
+		8F665AC61B84CA4700B357C1 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F665AC51B84CA4600B357C1 /* Launch Screen.xib */; };
 		8F70B28A1B198979007D97CA /* a0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B2321B198979007D97CA /* a0.mp3 */; };
 		8F70B28B1B198979007D97CA /* a0m.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B2331B198979007D97CA /* a0m.mp3 */; };
 		8F70B28C1B198979007D97CA /* a1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B2341B198979007D97CA /* a1.mp3 */; };
@@ -108,11 +109,20 @@
 		8F70B2E91B19A843007D97CA /* crrect_answer1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B2E41B19A843007D97CA /* crrect_answer1.mp3 */; };
 		8F70B2EA1B19A843007D97CA /* crrect_answer2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B2E51B19A843007D97CA /* crrect_answer2.mp3 */; };
 		8F70B2EB1B19A843007D97CA /* crrect_answer3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B2E61B19A843007D97CA /* crrect_answer3.mp3 */; };
-		8F70B2EF1B19B6D0007D97CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F70B2ED1B19B6D0007D97CA /* Fabric.framework */; };
-		8F70B2F01B19B6D0007D97CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F70B2EE1B19B6D0007D97CA /* Crashlytics.framework */; };
 		8F70B3251B19DB63007D97CA /* blackout_dulcimer1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B3241B19DB63007D97CA /* blackout_dulcimer1.mp3 */; };
 		8F70B3271B19DCC8007D97CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F70B3261B19DCC8007D97CA /* AVFoundation.framework */; };
 		8F70B3551B19EE46007D97CA /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F70B3541B19EE46007D97CA /* iRate.bundle */; };
+		8F7284041BBCE8600043A171 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7284031BBCE8600043A171 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8F72842B1BBD11AB0043A171 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72842A1BBD11AB0043A171 /* AdSupport.framework */; };
+		8F72842D1BBD11B60043A171 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72842C1BBD11B60043A171 /* AudioToolbox.framework */; };
+		8F72842F1BBD11C70043A171 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72842E1BBD11C70043A171 /* CoreGraphics.framework */; };
+		8F7284311BBD11CD0043A171 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284301BBD11CD0043A171 /* CoreMedia.framework */; };
+		8F7284331BBD11D50043A171 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284321BBD11D50043A171 /* CoreTelephony.framework */; };
+		8F7284361BBD11DE0043A171 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284341BBD11DE0043A171 /* EventKit.framework */; };
+		8F7284371BBD11DE0043A171 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284351BBD11DE0043A171 /* EventKitUI.framework */; };
+		8F7284391BBD11E40043A171 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7284381BBD11E40043A171 /* MessageUI.framework */; };
+		8F72843B1BBD11EC0043A171 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72843A1BBD11EC0043A171 /* StoreKit.framework */; };
+		8F72843D1BBD11F10043A171 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F72843C1BBD11F10043A171 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +149,7 @@
 		8F4E053D1B0E0B7E0007A06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4E053E1B0E0B7E0007A06F /* iMSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMSTests.swift; sourceTree = "<group>"; };
 		8F553DD01B1753B400E215F5 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
+		8F665AC51B84CA4600B357C1 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
 		8F70B2321B198979007D97CA /* a0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a0.mp3; sourceTree = "<group>"; };
 		8F70B2331B198979007D97CA /* a0m.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a0m.mp3; sourceTree = "<group>"; };
 		8F70B2341B198979007D97CA /* a1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a1.mp3; sourceTree = "<group>"; };
@@ -232,16 +243,22 @@
 		8F70B2E41B19A843007D97CA /* crrect_answer1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crrect_answer1.mp3; sourceTree = "<group>"; };
 		8F70B2E51B19A843007D97CA /* crrect_answer2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crrect_answer2.mp3; sourceTree = "<group>"; };
 		8F70B2E61B19A843007D97CA /* crrect_answer3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crrect_answer3.mp3; sourceTree = "<group>"; };
-		8F70B2ED1B19B6D0007D97CA /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		8F70B2EE1B19B6D0007D97CA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8F70B2F11B19BBF1007D97CA /* iMS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMS-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F70B3241B19DB63007D97CA /* blackout_dulcimer1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blackout_dulcimer1.mp3; sourceTree = "<group>"; };
 		8F70B3261B19DCC8007D97CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8F70B3541B19EE46007D97CA /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = Pods/iRate/iRate/iRate.bundle; sourceTree = "<group>"; };
-		8F70B3561B19F272007D97CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		8F70B3581B19F27D007D97CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		8F70B3591B19F325007D97CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hant"; path = "zh-Hant.lproj/Info.plist"; sourceTree = "<group>"; };
-		8F70B35A1B19F334007D97CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/Info.plist"; sourceTree = "<group>"; };
+		8F7284031BBCE8600043A171 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8F72842A1BBD11AB0043A171 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8F72842C1BBD11B60043A171 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8F72842E1BBD11C70043A171 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8F7284301BBD11CD0043A171 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8F7284321BBD11D50043A171 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8F7284341BBD11DE0043A171 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		8F7284351BBD11DE0043A171 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		8F7284381BBD11E40043A171 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8F72843A1BBD11EC0043A171 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8F72843C1BBD11F10043A171 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,10 +266,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F72843D1BBD11F10043A171 /* SystemConfiguration.framework in Frameworks */,
+				8F72843B1BBD11EC0043A171 /* StoreKit.framework in Frameworks */,
+				8F7284391BBD11E40043A171 /* MessageUI.framework in Frameworks */,
+				8F7284361BBD11DE0043A171 /* EventKit.framework in Frameworks */,
+				8F7284371BBD11DE0043A171 /* EventKitUI.framework in Frameworks */,
+				8F7284331BBD11D50043A171 /* CoreTelephony.framework in Frameworks */,
+				8F7284311BBD11CD0043A171 /* CoreMedia.framework in Frameworks */,
+				8F72842F1BBD11C70043A171 /* CoreGraphics.framework in Frameworks */,
 				8F70B3271B19DCC8007D97CA /* AVFoundation.framework in Frameworks */,
+				8F72842D1BBD11B60043A171 /* AudioToolbox.framework in Frameworks */,
+				8F72842B1BBD11AB0043A171 /* AdSupport.framework in Frameworks */,
 				066CC59A73E2418FCFA62EA2 /* Pods.framework in Frameworks */,
-				8F70B2F01B19B6D0007D97CA /* Crashlytics.framework in Frameworks */,
-				8F70B2EF1B19B6D0007D97CA /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +294,16 @@
 		26BAB2607919DF06B72713E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F72843C1BBD11F10043A171 /* SystemConfiguration.framework */,
+				8F72843A1BBD11EC0043A171 /* StoreKit.framework */,
+				8F7284381BBD11E40043A171 /* MessageUI.framework */,
+				8F7284341BBD11DE0043A171 /* EventKit.framework */,
+				8F7284351BBD11DE0043A171 /* EventKitUI.framework */,
+				8F7284321BBD11D50043A171 /* CoreTelephony.framework */,
+				8F7284301BBD11CD0043A171 /* CoreMedia.framework */,
+				8F72842E1BBD11C70043A171 /* CoreGraphics.framework */,
+				8F72842C1BBD11B60043A171 /* AudioToolbox.framework */,
+				8F72842A1BBD11AB0043A171 /* AdSupport.framework */,
 				8F70B3261B19DCC8007D97CA /* AVFoundation.framework */,
 				8CDBA88A7B7A768404EF9240 /* Pods.framework */,
 			);
@@ -288,8 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				8F70B3541B19EE46007D97CA /* iRate.bundle */,
-				8F70B2ED1B19B6D0007D97CA /* Fabric.framework */,
-				8F70B2EE1B19B6D0007D97CA /* Crashlytics.framework */,
 				8F4E05251B0E0B7E0007A06F /* iMS */,
 				8F4E053B1B0E0B7E0007A06F /* iMSTests */,
 				8F4E05241B0E0B7E0007A06F /* Products */,
@@ -325,6 +358,7 @@
 				8F4E052F1B0E0B7E0007A06F /* Images.xcassets */,
 				8F4E05261B0E0B7E0007A06F /* Supporting Files */,
 				8F70B2F11B19BBF1007D97CA /* iMS-Bridging-Header.h */,
+				8F7284031BBCE8600043A171 /* Launch Screen.storyboard */,
 			);
 			path = iMS;
 			sourceTree = "<group>";
@@ -349,6 +383,7 @@
 		8F4E053C1B0E0B7E0007A06F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F665AC51B84CA4600B357C1 /* Launch Screen.xib */,
 				8F4E053D1B0E0B7E0007A06F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -463,7 +498,6 @@
 				8F4E05211B0E0B7E0007A06F /* Resources */,
 				42ECE93D495BABB83F16EA06 /* Embed Pods Frameworks */,
 				C3E273384F357FCAAD11BB47 /* Copy Pods Resources */,
-				8F70B2EC1B19B6BE007D97CA /* ShellScript */,
 				8F70B35B1B1A0DB2007D97CA /* ShellScript */,
 			);
 			buildRules = (
@@ -499,7 +533,9 @@
 		8F4E051B1B0E0B7E0007A06F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = AirconTW;
 				TargetAttributes = {
 					8F4E05221B0E0B7E0007A06F = {
@@ -517,10 +553,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
-				"zh-Hant",
-				"zh-Hans",
+				en,
 			);
 			mainGroup = 8F4E051A1B0E0B7E0007A06F;
 			productRefGroup = 8F4E05241B0E0B7E0007A06F /* Products */;
@@ -576,6 +610,8 @@
 				8F70B2AB1B198979007D97CA /* c5m.mp3 in Resources */,
 				8F70B2BE1B198979007D97CA /* d7m.mp3 in Resources */,
 				8F70B2AD1B198979007D97CA /* c6m.mp3 in Resources */,
+				8F7284041BBCE8600043A171 /* Launch Screen.storyboard in Resources */,
+				8F665AC61B84CA4700B357C1 /* Launch Screen.xib in Resources */,
 				8F4E05301B0E0B7E0007A06F /* Images.xcassets in Resources */,
 				8F70B28B1B198979007D97CA /* a0m.mp3 in Resources */,
 				8F70B2D21B198979007D97CA /* f7.mp3 in Resources */,
@@ -679,19 +715,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F70B2EC1B19B6BE007D97CA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run e6eb162f29a7bd9acaea0065c912ae9fcec1f7f6 447172784342334e3d894c3624ae4504c62ec728a6a45034f7fb625257e3e650";
-		};
 		8F70B35B1B1A0DB2007D97CA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -763,10 +786,7 @@
 		8F70B3571B19F272007D97CA /* Info.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8F70B3561B19F272007D97CA /* en */,
 				8F70B3581B19F27D007D97CA /* Base */,
-				8F70B3591B19F325007D97CA /* zh-Hant */,
-				8F70B35A1B19F334007D97CA /* zh-Hans */,
 			);
 			name = Info.plist;
 			sourceTree = "<group>";
@@ -795,6 +815,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -810,7 +831,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -848,7 +869,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -863,15 +884,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = /Volumes/Transcend/iOS/iMS/iMS/Base.lproj/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/iMSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aircon.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos9.0;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iMS/iMS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -887,15 +907,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = /Volumes/Transcend/iOS/iMS/iMS/Base.lproj/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/iMSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aircon.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos9.0;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iMS/iMS-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -906,16 +925,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = iMSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aircon.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMS.app/iMS";
 			};
@@ -925,12 +941,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = iMSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aircon.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMS.app/iMS";
 			};

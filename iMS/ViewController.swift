@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 import AVFoundation
-
+import GoogleMobileAds;
 
 let path = NSBundle.mainBundle().pathForResource("clefList", ofType: "plist")
 let clefDict = NSDictionary(contentsOfFile: path!)
@@ -18,9 +18,9 @@ let G_CLEF = "G-Clef"
 let F_CLEF = "F-Clef"
 let MIX_CLEF = "Mix-Clef"
 
-class ViewController: SuperViewController {
+class ViewController: SuperViewController, GADInterstitialDelegate {
 
-    @IBOutlet weak var clefLabel: SpringLabel!
+    @IBOutlet weak var clefButton: SpringButton!
     @IBOutlet weak var rightAnswerLabel: SpringLabel!
     @IBOutlet weak var wrongAnswerLabel: SpringLabel!
     @IBOutlet weak var musicNoteImageView: SpringImageView!
@@ -30,27 +30,31 @@ class ViewController: SuperViewController {
     var noteDict = clefDict?.objectForKey(G_CLEF) as! NSDictionary  // 預設Ｇ譜號
     var musicNoteKeyArray = Array<String>()
     var musicNote:String?
-    
-    var audioPlayer = AVAudioPlayer()
+
+    var interstitial:GADInterstitial!
 
     override func viewDidLoad() {
     
         super.viewDidLoad()
         
         createMusicNote()
+
+        
+        //廣告宣告
+        self.interstitial = createAndLoadInterstitial()
     }
 
     
     
     @IBAction func keyBoardTouchDown(sender: SpringButton) {
         
-        var path:String?
-        let answer = noteDict.valueForKey(musicNote!) as! String
+        var path:String!
+        path = noteDict.valueForKey(musicNote!) as! String
         
-        let index = (musicNote!as NSString).substringFromIndex(1).toInt()
+        let index = Int((musicNote!as NSString).substringFromIndex(1))
 
         
-        if clefLabel.text == G_CLEF {
+        if self.clefButton.titleLabel == G_CLEF {
             if(index == 1){
                 path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")
 
@@ -62,7 +66,7 @@ class ViewController: SuperViewController {
                 path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")
             }
 
-        }else if clefLabel.text == F_CLEF {
+        }else if self.clefButton.titleLabel == F_CLEF {
 
             if(index == 1){
                 path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")
@@ -74,7 +78,7 @@ class ViewController: SuperViewController {
                 path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")
             }
    
-        }else if clefLabel.text == MIX_CLEF {
+        }else if self.clefButton.titleLabel == MIX_CLEF {
             
             let clef = (musicNote!as NSString).substringWithRange(NSMakeRange(0, 1))
             if clef == "G"{
@@ -114,7 +118,7 @@ class ViewController: SuperViewController {
         if sender.titleLabel!.text == answer {
             //            path = NSBundle.mainBundle().pathForResource("crrect_answer1", ofType:"mp3")
             
-            correctCount++
+            self.correctCount++
             
             rightAnswerLabel.animation = "pop"
             rightAnswerLabel.scaleX = 1.5
@@ -129,7 +133,12 @@ class ViewController: SuperViewController {
 //            path = NSBundle.mainBundle().pathForResource("blip1", ofType:"mp3")
             
             
-            errorCount++
+            self.errorCount++
+            
+        
+            if self.errorCount % 10 == 0 {
+                showAd()
+            }
             
             
             
@@ -147,12 +156,12 @@ class ViewController: SuperViewController {
     //MARK:切換譜號
     @IBAction func clefButtonPressed(sender: SpringButton) {
         
-        if clefLabel.text == G_CLEF {
-            clefLabel.text = F_CLEF
-        }else if clefLabel.text == F_CLEF {
-            clefLabel.text = MIX_CLEF
-        }else if clefLabel.text == MIX_CLEF {
-            clefLabel.text = G_CLEF
+        if self.clefButton.titleLabel?.text == G_CLEF {
+            self.clefButton.setTitle(F_CLEF, forState:  UIControlState.Normal)
+        }else if self.clefButton.titleLabel?.text == F_CLEF {
+            self.clefButton.setTitle(MIX_CLEF, forState: UIControlState.Normal)
+        }else if self.clefButton.titleLabel?.text == MIX_CLEF {
+            self.clefButton.setTitle(G_CLEF, forState: UIControlState.Normal)
         }
         changeClef()
     }
@@ -183,15 +192,15 @@ class ViewController: SuperViewController {
         updateResultLabel()
         
         
-        clefLabel.animation = "swing"
-        clefLabel.scaleX = 1.5
-        clefLabel.scaleY = 1.5
-        clefLabel.duration = 3
-        clefLabel.animate()
+        self.clefButton.animation = "swing"
+        self.clefButton.scaleX = 1.5
+        self.clefButton.scaleY = 1.5
+        self.clefButton.duration = 3
+        self.clefButton.animate()
         
         
         
-        noteDict = clefDict?.objectForKey(clefLabel.text!) as! NSDictionary
+        noteDict = clefDict?.objectForKey(self.clefButton.titleLabel!.text!) as! NSDictionary
         createMusicNote()
     }
     
@@ -207,16 +216,40 @@ class ViewController: SuperViewController {
         musicNoteImageView.image = UIImage(named: "\(musicNote!)")
 
         musicNoteImageView.animate()
-        
-        println("clef:\(musicNote!)")
+
+//        print("clef:\(musicNote!)")
     }
 
     
     func playSound(path:String){
         let fileURL = NSURL(fileURLWithPath: path)
-        audioPlayer = AVAudioPlayer(contentsOfURL: fileURL, error: nil)
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
+        let audioPlayer: AVAudioPlayer? = try? AVAudioPlayer(contentsOfURL: fileURL)
+        if let audioPlayer = audioPlayer {
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }
+
     }
+    
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let theInterstitial = GADInterstitial(adUnitID: "ca-app-pub-5200673733349176/8483398845")
+        theInterstitial.delegate = self
+        let request = GADRequest()
+        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
+        theInterstitial.loadRequest(request)
+        return theInterstitial
+    }
+    
+    func showAd(){
+        if (self.interstitial.isReady) {
+            self.interstitial.presentFromRootViewController(self)
+        }
+    }
+    
+    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+        self.interstitial = createAndLoadInterstitial()
+    }
+
 }
 
