@@ -51,19 +51,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		65225CCF96C7CE193424E7264DF950E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 00E74CED770597EF76DEE6FE824D1B7A;
-			remoteInfo = iRate;
-		};
-		DF816A8508B9E31F7BD2AF39DFEAB556 /* PBXContainerItemProxy */ = {
+		85AA99826B68612D6CE640FC52057902 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4ADDC830F1F3957A877DC0A28F0CBD4E;
 			remoteInfo = Spring;
+		};
+		B70B50D899A13ED0511DBB42EB72183A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00E74CED770597EF76DEE6FE824D1B7A;
+			remoteInfo = iRate;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -72,30 +72,29 @@
 		108AA2994D7815017CD629C1646FFF61 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
 		17786A103C8CD0AAB191C5A9353EBBFC /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
 		1C1784DDFE15E347050FBCCECBF37CBB /* iRate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = iRate/iRate.bundle; sourceTree = "<group>"; };
-		20C5A9E060D3A884220859C6F5E803C0 /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		1C909CD331573793161127555F32BDCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C0F51565A5346A442CC17CBFEE3FBD /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
 		243BD3D3C3D5BDAF745916587420D963 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
-		272E849BFE2AEA6A115B51E88890D3BB /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
 		2834662A3665BDF7D2F61BA3631A66AD /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
 		32DA444654CA94104036B7DFCAD94AB9 /* Spring-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Spring-Private.xcconfig"; sourceTree = "<group>"; };
 		37F3D3BA73F633688D4B0A041AFDFEFF /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
-		3B74DC77A2031DB1413F74A124A77DB9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.5.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		3F0DDB94A6A730FFE77FE27E009B3E00 /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
+		3F502FC3261B2E82D94E084CAB26B21F /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.5.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		3F9CC2BB93470648CCEE42F06CF16EF1 /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
 		451746300E823F97EB2F05F955A14B46 /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		463F5FF54082A93A6D5E45D6EB289732 /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
 		4ACF5E472382B95FBDED0550E24C18DB /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
 		4DF1373004EE5CF38BDD54B6746887D0 /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
 		5075CA34D66BA7EB2D5CC8BF801324F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB8DC0029F616AC6A34A74FDAFD750 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
-		5210821C7824D6C98EE2B32E27691A54 /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
+		5D7DBDCB3A831394B0F0C27D1651CF5A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EB9BDBABA43110076FA96D52B851978 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		6042DF11B0556246F709E48681BA4842 /* iRate-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "iRate-Private.xcconfig"; sourceTree = "<group>"; };
 		60A3D089603B5652EC5A1BDFBBAC7F1A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		60B11326E117F16B77C4601D8FF6FC0B /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
 		6106FA0626AF6849CC0B8FA5321C5814 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
 		644DF8F1DD47151F078FE505B9287BE4 /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
+		6676A16D09C6988949D73ECA8BBC5BB1 /* iRate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = iRate.modulemap; sourceTree = "<group>"; };
 		67CC8A65F0EF794A5D71B27AB1472C17 /* iRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CB1ACC77F98622D999B7D2CF91B2496 /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
 		6F5FA4219C27344F5A01D3CDD86C3EAB /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
 		714B835B557B3F72D89945095C23B1A4 /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
 		738DDC6F465BEAF6B19B20357C55F4E6 /* iRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = iRate/iRate.m; sourceTree = "<group>"; };
@@ -104,16 +103,19 @@
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		7AFD36001E1E1A5CD8ACF7C1D524559F /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
 		7B639C1CF665CE74FBD6494B9A6633AC /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
+		7F0803CE2CA2A6F4355E248C2D83AB3E /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
+		83A8A16676A6D80008AEB3C6EA38CAB8 /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
 		83D313E70FABD3B63D31116FC62DDD68 /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
 		8687E0A11FE96573916D54203EDE207D /* iRate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRate-dummy.m"; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		8FB732CD62FEDCF9BB22529EEF34AC92 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88D6AC521A56F571BE25AFA1B4F6F8CF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		91059726DC94563BC9E3159625138DBE /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
-		9517ECA5FE9EDBB2CBD2230BFEBB743E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E4A04412784B2B3A8735C7186E1AE16 /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
 		9F9876D10625C1E9006562055D3BF119 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		A469EA6FE99E1981E22F04EB0B3C2473 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		ADDDAB85D2D647836B414ADCCCE45CE6 /* iRate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-umbrella.h"; sourceTree = "<group>"; };
 		B47A46C4CDA26763F8A89977615BA750 /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		B812E81FD56196C8DD2DD9FE799FD5ED /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C28517CF1749DF981B83A9F1D8542FF5 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
 		C55DE6BD2C60A6FC893D8DB339FC4553 /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
@@ -128,8 +130,8 @@
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95E51F4DD7DF371E7C6C2F56ECB63F4 /* iRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = iRate/iRate.h; sourceTree = "<group>"; };
 		F4ACCD70A7BF41AA023293D4F71B7333 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FB394313C05F4EAE8A0B9F8F1141430C /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
 		FE0B4A3C8430E8D9BAC52FE90BB00CF2 /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
-		FF80965F2D69D0F2C879D0FA429DE2BB /* iRate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = iRate.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,22 +162,140 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B3919E121F03A32B164245A379ED9FC /* Support Files */ = {
+		0FE9D07A1CA95E25E7DC10FEB22F3A58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8FB732CD62FEDCF9BB22529EEF34AC92 /* Info.plist */,
-				FF80965F2D69D0F2C879D0FA429DE2BB /* iRate.modulemap */,
-				463F5FF54082A93A6D5E45D6EB289732 /* iRate.xcconfig */,
-				6042DF11B0556246F709E48681BA4842 /* iRate-Private.xcconfig */,
-				8687E0A11FE96573916D54203EDE207D /* iRate-dummy.m */,
-				272E849BFE2AEA6A115B51E88890D3BB /* iRate-prefix.pch */,
-				ADDDAB85D2D647836B414ADCCCE45CE6 /* iRate-umbrella.h */,
+				1C1784DDFE15E347050FBCCECBF37CBB /* iRate.bundle */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/iRate";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		3C7F376BF92257238D8EB92DFF9AC136 /* Spring */ = {
+		2C6F4D18E01F4C2EDF8E34B24503273C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3AFEA31351C8231E13AF9C355358B367 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		3AFEA31351C8231E13AF9C355358B367 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88D6AC521A56F571BE25AFA1B4F6F8CF /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F4ACCD70A7BF41AA023293D4F71B7333 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5D20F032BE466A2163394F028BFE8373 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6106FA0626AF6849CC0B8FA5321C5814 /* Images.xcassets */,
+				C55DE6BD2C60A6FC893D8DB339FC4553 /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5DD0AD17C246EA5E1276B1315997E389 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				2C6F4D18E01F4C2EDF8E34B24503273C /* Base */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */,
+				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
+				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
+				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
+				5EB9BDBABA43110076FA96D52B851978 /* Pods-dummy.m */,
+				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
+				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
+				7AFD36001E1E1A5CD8ACF7C1D524559F /* Pods-umbrella.h */,
+				C9935035AD6DB924C9D442B4BE7EB294 /* Pods.debug.xcconfig */,
+				60A3D089603B5652EC5A1BDFBBAC7F1A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				A8106F0FFFA8FE30150B4F5B3AED5C28 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		876A17695B22B32BC737C2F33C24E460 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				E95E51F4DD7DF371E7C6C2F56ECB63F4 /* iRate.h */,
+				738DDC6F465BEAF6B19B20357C55F4E6 /* iRate.m */,
+				0FE9D07A1CA95E25E7DC10FEB22F3A58 /* Resources */,
+				D837FA2C17CC8ED53BAC14C71BBF2306 /* Support Files */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
+		A8106F0FFFA8FE30150B4F5B3AED5C28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6AD4D6DA2188C6EE6B29E1DAFA7DC8A /* Crashlytics */,
+				5DD0AD17C246EA5E1276B1315997E389 /* Fabric */,
+				C6ADAB5EFDFFE2C27B19762F7614448C /* Google-Mobile-Ads-SDK */,
+				CC96858892B971643C50AB5D57805129 /* Spring */,
+				876A17695B22B32BC737C2F33C24E460 /* iRate */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6ADAB5EFDFFE2C27B19762F7614448C /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				CC79A302580FB755F48EA714FFBCDBF1 /* Frameworks */,
+			);
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		CC79A302580FB755F48EA714FFBCDBF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F502FC3261B2E82D94E084CAB26B21F /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC96858892B971643C50AB5D57805129 /* Spring */ = {
 			isa = PBXGroup;
 			children = (
 				C96B6E188B9C19B02F7A48882B460FF1 /* AsyncButton.swift */,
@@ -205,114 +325,10 @@
 				83D313E70FABD3B63D31116FC62DDD68 /* TransitionManager.swift */,
 				9E4A04412784B2B3A8735C7186E1AE16 /* TransitionZoom.swift */,
 				FE0B4A3C8430E8D9BAC52FE90BB00CF2 /* UnwindSegue.swift */,
-				B415E67BEE94FF9C8ECA723E962A657A /* Resources */,
-				948FD864B310BFC3A2F7B316A506FC78 /* Support Files */,
+				5D20F032BE466A2163394F028BFE8373 /* Resources */,
+				F5D95753CDA9DF5EC3245603F8D6DC2B /* Support Files */,
 			);
 			path = Spring;
-			sourceTree = "<group>";
-		};
-		4DB2A6E2E6B7408F4FF512717375BDB4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3B74DC77A2031DB1413F74A124A77DB9 /* GoogleMobileAds.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				F4ACCD70A7BF41AA023293D4F71B7333 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		566911C6C0FD9BEFA0764736C7F7DF96 /* iRate */ = {
-			isa = PBXGroup;
-			children = (
-				E95E51F4DD7DF371E7C6C2F56ECB63F4 /* iRate.h */,
-				738DDC6F465BEAF6B19B20357C55F4E6 /* iRate.m */,
-				F077398EC9143331B6BEAF7B6047C33A /* Resources */,
-				1B3919E121F03A32B164245A379ED9FC /* Support Files */,
-			);
-			path = iRate;
-			sourceTree = "<group>";
-		};
-		6BDEE6F834E8DC3C355C66BBA3C9FD6B /* Google-Mobile-Ads-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				4DB2A6E2E6B7408F4FF512717375BDB4 /* Frameworks */,
-			);
-			path = "Google-Mobile-Ads-SDK";
-			sourceTree = "<group>";
-		};
-		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */,
-				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
-				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
-				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
-				5EB9BDBABA43110076FA96D52B851978 /* Pods-dummy.m */,
-				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
-				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
-				7AFD36001E1E1A5CD8ACF7C1D524559F /* Pods-umbrella.h */,
-				C9935035AD6DB924C9D442B4BE7EB294 /* Pods.debug.xcconfig */,
-				60A3D089603B5652EC5A1BDFBBAC7F1A /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				E80EB1E7B48EC335C441576528C2D594 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		948FD864B310BFC3A2F7B316A506FC78 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9517ECA5FE9EDBB2CBD2230BFEBB743E /* Info.plist */,
-				6CB1ACC77F98622D999B7D2CF91B2496 /* Spring.modulemap */,
-				5210821C7824D6C98EE2B32E27691A54 /* Spring.xcconfig */,
-				32DA444654CA94104036B7DFCAD94AB9 /* Spring-Private.xcconfig */,
-				6F5FA4219C27344F5A01D3CDD86C3EAB /* Spring-dummy.m */,
-				20C5A9E060D3A884220859C6F5E803C0 /* Spring-prefix.pch */,
-				4ACF5E472382B95FBDED0550E24C18DB /* Spring-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Spring";
-			sourceTree = "<group>";
-		};
-		B415E67BEE94FF9C8ECA723E962A657A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6106FA0626AF6849CC0B8FA5321C5814 /* Images.xcassets */,
-				C55DE6BD2C60A6FC893D8DB339FC4553 /* LoadingView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
@@ -325,22 +341,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E80EB1E7B48EC335C441576528C2D594 /* Pods */ = {
+		D837FA2C17CC8ED53BAC14C71BBF2306 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6BDEE6F834E8DC3C355C66BBA3C9FD6B /* Google-Mobile-Ads-SDK */,
-				3C7F376BF92257238D8EB92DFF9AC136 /* Spring */,
-				566911C6C0FD9BEFA0764736C7F7DF96 /* iRate */,
+				5D7DBDCB3A831394B0F0C27D1651CF5A /* Info.plist */,
+				6676A16D09C6988949D73ECA8BBC5BB1 /* iRate.modulemap */,
+				83A8A16676A6D80008AEB3C6EA38CAB8 /* iRate.xcconfig */,
+				6042DF11B0556246F709E48681BA4842 /* iRate-Private.xcconfig */,
+				8687E0A11FE96573916D54203EDE207D /* iRate-dummy.m */,
+				3F0DDB94A6A730FFE77FE27E009B3E00 /* iRate-prefix.pch */,
+				ADDDAB85D2D647836B414ADCCCE45CE6 /* iRate-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/iRate";
 			sourceTree = "<group>";
 		};
-		F077398EC9143331B6BEAF7B6047C33A /* Resources */ = {
+		DDDC5EC46865F6666344CBE4091EAE0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C1784DDFE15E347050FBCCECBF37CBB /* iRate.bundle */,
+				A469EA6FE99E1981E22F04EB0B3C2473 /* Crashlytics.framework */,
 			);
-			name = Resources;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6AD4D6DA2188C6EE6B29E1DAFA7DC8A /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				DDDC5EC46865F6666344CBE4091EAE0E /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		F5D95753CDA9DF5EC3245603F8D6DC2B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C909CD331573793161127555F32BDCE /* Info.plist */,
+				7F0803CE2CA2A6F4355E248C2D83AB3E /* Spring.modulemap */,
+				FB394313C05F4EAE8A0B9F8F1141430C /* Spring.xcconfig */,
+				32DA444654CA94104036B7DFCAD94AB9 /* Spring-Private.xcconfig */,
+				6F5FA4219C27344F5A01D3CDD86C3EAB /* Spring-dummy.m */,
+				B812E81FD56196C8DD2DD9FE799FD5ED /* Spring-prefix.pch */,
+				4ACF5E472382B95FBDED0550E24C18DB /* Spring-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Spring";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,8 +465,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				19F0137B124C0CBEC3D25BB94B0A1C7B /* PBXTargetDependency */,
-				203DA4345AC4151045877C0F18570D12 /* PBXTargetDependency */,
+				83E99EDB2745FEA66EAEB842C7254A36 /* PBXTargetDependency */,
+				1E3CC2832ED0126C56486979A5540F55 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -533,17 +577,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		19F0137B124C0CBEC3D25BB94B0A1C7B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Spring;
-			target = 4ADDC830F1F3957A877DC0A28F0CBD4E /* Spring */;
-			targetProxy = DF816A8508B9E31F7BD2AF39DFEAB556 /* PBXContainerItemProxy */;
-		};
-		203DA4345AC4151045877C0F18570D12 /* PBXTargetDependency */ = {
+		1E3CC2832ED0126C56486979A5540F55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = iRate;
 			target = 00E74CED770597EF76DEE6FE824D1B7A /* iRate */;
-			targetProxy = 65225CCF96C7CE193424E7264DF950E0 /* PBXContainerItemProxy */;
+			targetProxy = B70B50D899A13ED0511DBB42EB72183A /* PBXContainerItemProxy */;
+		};
+		83E99EDB2745FEA66EAEB842C7254A36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = 4ADDC830F1F3957A877DC0A28F0CBD4E /* Spring */;
+			targetProxy = 85AA99826B68612D6CE640FC52057902 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

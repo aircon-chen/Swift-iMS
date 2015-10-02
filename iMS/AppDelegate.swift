@@ -8,6 +8,8 @@
 
 import UIKit
 import iRate
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         iRate.sharedInstance().daysUntilPrompt = 0.5
         iRate.sharedInstance().usesUntilPrompt = 3
 //        iRate.sharedInstance().previewMode = true
+        
+        
+        Fabric.with([Crashlytics.self()])
+
+        
+        
         return true
     }
 

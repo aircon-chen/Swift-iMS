@@ -30,7 +30,10 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
     var noteDict = clefDict?.objectForKey(G_CLEF) as! NSDictionary  // 預設Ｇ譜號
     var musicNoteKeyArray = Array<String>()
     var musicNote:String?
+    var path:String!
+    var audioPlayer: AVAudioPlayer?
 
+    
     var interstitial:GADInterstitial!
 
     override func viewDidLoad() {
@@ -48,66 +51,65 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
     
     @IBAction func keyBoardTouchDown(sender: SpringButton) {
         
-        var path:String!
-        path = noteDict.valueForKey(musicNote!) as! String
+        self.path = noteDict.valueForKey(musicNote!) as! String
         
         let index = Int((musicNote!as NSString).substringFromIndex(1))
 
         
-        if self.clefButton.titleLabel == G_CLEF {
+        if self.clefButton.titleLabel?.text == G_CLEF {
             if(index == 1){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
 
             }else if(index > 15){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)6", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)6", ofType:"mp3")!
             }else if(index > 8){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)5", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)5", ofType:"mp3")!
             }else{
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
             }
 
-        }else if self.clefButton.titleLabel == F_CLEF {
+        }else if self.clefButton.titleLabel?.text == F_CLEF {
 
             if(index == 1){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
             }else if(index > 15){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)1", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)1", ofType:"mp3")!
             }else if(index > 8){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)2", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)2", ofType:"mp3")!
             }else{
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")
+                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
             }
    
-        }else if self.clefButton.titleLabel == MIX_CLEF {
+        }else if self.clefButton.titleLabel?.text == MIX_CLEF {
             
             let clef = (musicNote!as NSString).substringWithRange(NSMakeRange(0, 1))
             if clef == "G"{
                 if(index == 1){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
                 }else if(index > 15){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)6", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)6", ofType:"mp3")!
                 }else if(index > 8){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)5", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)5", ofType:"mp3")!
                 }else{
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
                 }
 
             }else{
                 if(index == 1){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
                 }else if(index > 15){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)1", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)1", ofType:"mp3")!
                 }else if(index > 8){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)2", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)2", ofType:"mp3")!
                 }else{
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")
+                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
                 }
 
             }
         
         }
         
-        playSound(path!)
+        playSound(self.path)
     }
     
     //MARK:按下鋼琴按鍵
@@ -149,7 +151,7 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
             wrongAnswerLabel.animate()
         }
         
-//                playSound(path!)
+//        playSound(self.path)
     }
     
     
@@ -183,9 +185,8 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
     //MARK:切換譜號
     func changeClef(){
         
-        let path = NSBundle.mainBundle().pathForResource("blackout_dulcimer1", ofType:"mp3")
-        playSound(path!)
-        
+        self.path = NSBundle.mainBundle().pathForResource("blackout_dulcimer1", ofType:"mp3")
+        playSound(self.path)
         //成績歸零
         correctCount = 0
         errorCount = 0
@@ -207,7 +208,7 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
     //MARK:變換音樂符號
     func createMusicNote(){
         updateResultLabel()
-        let randomNumber =  Int(arc4random()) % noteDict.count
+        let randomNumber =  Int(arc4random_uniform(UInt32(noteDict.count)))
         musicNoteKeyArray = noteDict.allKeys as! Array<String>
         musicNote = musicNoteKeyArray[randomNumber]
 
@@ -223,12 +224,11 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
     
     func playSound(path:String){
         let fileURL = NSURL(fileURLWithPath: path)
-        let audioPlayer: AVAudioPlayer? = try? AVAudioPlayer(contentsOfURL: fileURL)
-        if let audioPlayer = audioPlayer {
+        self.audioPlayer = try? AVAudioPlayer(contentsOfURL: fileURL)
+        if let audioPlayer = self.audioPlayer {
             audioPlayer.prepareToPlay()
             audioPlayer.play()
         }
-
     }
     
     
@@ -236,7 +236,7 @@ class ViewController: SuperViewController, GADInterstitialDelegate {
         let theInterstitial = GADInterstitial(adUnitID: "ca-app-pub-5200673733349176/8483398845")
         theInterstitial.delegate = self
         let request = GADRequest()
-        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
+        request.testDevices = ["2e42a901e1bdd3ad2e8d88c2ac74db59"]
         theInterstitial.loadRequest(request)
         return theInterstitial
     }
