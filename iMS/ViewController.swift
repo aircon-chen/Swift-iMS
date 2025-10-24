@@ -7,249 +7,269 @@
 //
 
 import UIKit
-import Spring
 import AVFoundation
-import GoogleMobileAds;
+@preconcurrency import GoogleMobileAds
 
-let path = NSBundle.mainBundle().pathForResource("clefList", ofType: "plist")
+@MainActor
+let path = Bundle.main.path(forResource: "clefList", ofType: "plist")
+
+@MainActor
 let clefDict = NSDictionary(contentsOfFile: path!)
 
 let G_CLEF = "G-Clef"
 let F_CLEF = "F-Clef"
 let MIX_CLEF = "Mix-Clef"
 
-class ViewController: SuperViewController, GADInterstitialDelegate {
+@MainActor
+class ViewController: SuperViewController, GADFullScreenContentDelegate {
 
-    @IBOutlet weak var clefButton: SpringButton!
-    @IBOutlet weak var rightAnswerLabel: SpringLabel!
-    @IBOutlet weak var wrongAnswerLabel: SpringLabel!
-    @IBOutlet weak var musicNoteImageView: SpringImageView!
+    @IBOutlet weak var clefButton: UIButton!
+    @IBOutlet weak var rightAnswerLabel: UILabel!
+    @IBOutlet weak var wrongAnswerLabel: UILabel!
+    @IBOutlet weak var musicNoteImageView: UIImageView!
     
-    var correctCount = 0    //正確數
-    var errorCount = 0      //錯誤數
-    var noteDict = clefDict?.objectForKey(G_CLEF) as! NSDictionary  // 預設Ｇ譜號
+    var correctCount = 0    // 正確數
+    var errorCount = 0      // 錯誤數
+    var noteDict = clefDict?.object(forKey: G_CLEF) as! NSDictionary  // 預設Ｇ譜號
     var musicNoteKeyArray = Array<String>()
-    var musicNote:String?
-    var path:String!
+    var musicNote: String?
+    var soundPath: String!
     var audioPlayer: AVAudioPlayer?
-
     
-    var interstitial:GADInterstitial!
+    // Google Ads SDK 尚未完全支援 Swift 6 並發，使用 nonisolated(unsafe) 來避免編譯錯誤
+    // 由於 GADInterstitialAd.load 的 completion handler 保證在主線程執行，所以實際使用是安全的
+    nonisolated(unsafe) var interstitial: GADInterstitialAd?
 
     override func viewDidLoad() {
-    
         super.viewDidLoad()
         
         createMusicNote()
-
         
-        //廣告宣告
-        self.interstitial = createAndLoadInterstitial()
+        // 廣告宣告
+        loadInterstitial()
     }
-
     
+    // MARK: - Keyboard Actions
     
-    @IBAction func keyBoardTouchDown(sender: SpringButton) {
+    @IBAction func keyBoardTouchDown(_ sender: UIButton) {
+        guard let musicNote = musicNote else { return }
+        self.soundPath = noteDict.value(forKey: musicNote) as? String
         
-        self.path = noteDict.valueForKey(musicNote!) as! String
+        let index = Int((musicNote as NSString).substring(from: 1))!
         
-        let index = Int((musicNote!as NSString).substringFromIndex(1))
-
+        guard let buttonText = sender.titleLabel?.text?.lowercased() else { return }
         
         if self.clefButton.titleLabel?.text == G_CLEF {
-            if(index == 1){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
-
-            }else if(index > 15){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)6", ofType:"mp3")!
-            }else if(index > 8){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)5", ofType:"mp3")!
-            }else{
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
+            if index == 1 {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)3", ofType: "mp3")!
+            } else if index > 15 {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)6", ofType: "mp3")!
+            } else if index > 8 {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)5", ofType: "mp3")!
+            } else {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)4", ofType: "mp3")!
             }
-
-        }else if self.clefButton.titleLabel?.text == F_CLEF {
-
-            if(index == 1){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
-            }else if(index > 15){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)1", ofType:"mp3")!
-            }else if(index > 8){
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)2", ofType:"mp3")!
-            }else{
-                path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
+        } else if self.clefButton.titleLabel?.text == F_CLEF {
+            if index == 1 {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)4", ofType: "mp3")!
+            } else if index > 15 {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)1", ofType: "mp3")!
+            } else if index > 8 {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)2", ofType: "mp3")!
+            } else {
+                soundPath = Bundle.main.path(forResource: "\(buttonText)3", ofType: "mp3")!
             }
-   
-        }else if self.clefButton.titleLabel?.text == MIX_CLEF {
-            
-            let clef = (musicNote!as NSString).substringWithRange(NSMakeRange(0, 1))
-            if clef == "G"{
-                if(index == 1){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
-                }else if(index > 15){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)6", ofType:"mp3")!
-                }else if(index > 8){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)5", ofType:"mp3")!
-                }else{
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
+        } else if self.clefButton.titleLabel?.text == MIX_CLEF {
+            let clef = (musicNote as NSString).substring(with: NSMakeRange(0, 1))
+            if clef == "G" {
+                if index == 1 {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)3", ofType: "mp3")!
+                } else if index > 15 {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)6", ofType: "mp3")!
+                } else if index > 8 {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)5", ofType: "mp3")!
+                } else {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)4", ofType: "mp3")!
                 }
-
-            }else{
-                if(index == 1){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)4", ofType:"mp3")!
-                }else if(index > 15){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)1", ofType:"mp3")!
-                }else if(index > 8){
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)2", ofType:"mp3")!
-                }else{
-                    path = NSBundle.mainBundle().pathForResource("\(sender.titleLabel!.text!.lowercaseString)3", ofType:"mp3")!
+            } else {
+                if index == 1 {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)4", ofType: "mp3")!
+                } else if index > 15 {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)1", ofType: "mp3")!
+                } else if index > 8 {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)2", ofType: "mp3")!
+                } else {
+                    soundPath = Bundle.main.path(forResource: "\(buttonText)3", ofType: "mp3")!
                 }
-
             }
-        
         }
         
-        playSound(self.path)
+        playSound(self.soundPath)
     }
     
-    //MARK:按下鋼琴按鍵
-    @IBAction func keyBoardPressed(sender: SpringButton) {
-    
-//        var path:String?
-        let answer = noteDict.valueForKey(musicNote!) as! String
-        if sender.titleLabel!.text == answer {
-            //            path = NSBundle.mainBundle().pathForResource("crrect_answer1", ofType:"mp3")
-            
-            self.correctCount++
-            
-            rightAnswerLabel.animation = "pop"
-            rightAnswerLabel.scaleX = 1.5
-            rightAnswerLabel.scaleY = 1.5
-            updateRightAnswerLabel()
-             rightAnswerLabel.animate()
-            
-
-            createMusicNote()
-        }else{
-
-//            path = NSBundle.mainBundle().pathForResource("blip1", ofType:"mp3")
-            
-            
-            self.errorCount++
-            
+    // MARK: - 按下鋼琴按鍵
+    @IBAction func keyBoardPressed(_ sender: UIButton) {
+        guard let musicNote = musicNote else { return }
+        let answer = noteDict.value(forKey: musicNote) as! String
         
+        if sender.titleLabel!.text == answer {
+            self.correctCount += 1
+            
+            updateRightAnswerLabel()
+            rightAnswerLabel.performSpringAnimation(
+                animation: "pop",
+                scaleX: 1.5,
+                scaleY: 1.5
+            )
+            
+            createMusicNote()
+        } else {
+            self.errorCount += 1
+            
             if self.errorCount % 10 == 0 {
                 showAd()
             }
             
-            
-            
-            wrongAnswerLabel.animation = "pop"
-            wrongAnswerLabel.scaleX = 1.5
-            wrongAnswerLabel.scaleY = 1.5
             updateWrongAnswerLabel()
-            wrongAnswerLabel.animate()
+            wrongAnswerLabel.performSpringAnimation(
+                animation: "pop",
+                scaleX: 1.5,
+                scaleY: 1.5
+            )
         }
-        
-//        playSound(self.path)
     }
     
-    
-    //MARK:切換譜號
-    @IBAction func clefButtonPressed(sender: SpringButton) {
-        
+    // MARK: - 切換譜號
+    @IBAction func clefButtonPressed(_ sender: UIButton) {
         if self.clefButton.titleLabel?.text == G_CLEF {
-            self.clefButton.setTitle(F_CLEF, forState:  UIControlState.Normal)
-        }else if self.clefButton.titleLabel?.text == F_CLEF {
-            self.clefButton.setTitle(MIX_CLEF, forState: UIControlState.Normal)
-        }else if self.clefButton.titleLabel?.text == MIX_CLEF {
-            self.clefButton.setTitle(G_CLEF, forState: UIControlState.Normal)
+            self.clefButton.setTitle(F_CLEF, for: .normal)
+        } else if self.clefButton.titleLabel?.text == F_CLEF {
+            self.clefButton.setTitle(MIX_CLEF, for: .normal)
+        } else if self.clefButton.titleLabel?.text == MIX_CLEF {
+            self.clefButton.setTitle(G_CLEF, for: .normal)
         }
         changeClef()
     }
     
-    //MARK:更新成績Label
-    func updateResultLabel(){
+    // MARK: - 更新成績 Label
+    func updateResultLabel() {
         updateRightAnswerLabel()
         updateWrongAnswerLabel()
     }
     
-    func updateRightAnswerLabel(){
+    func updateRightAnswerLabel() {
         rightAnswerLabel.text = String(correctCount)
     }
     
-    func updateWrongAnswerLabel(){
+    func updateWrongAnswerLabel() {
         wrongAnswerLabel.text = String(errorCount)
     }
     
-    //MARK:切換譜號
-    func changeClef(){
+    // MARK: - 切換譜號
+    func changeClef() {
+        self.soundPath = Bundle.main.path(forResource: "blackout_dulcimer1", ofType: "mp3")
+        playSound(self.soundPath)
         
-        self.path = NSBundle.mainBundle().pathForResource("blackout_dulcimer1", ofType:"mp3")
-        playSound(self.path)
-        //成績歸零
+        // 成績歸零
         correctCount = 0
         errorCount = 0
         updateResultLabel()
         
+        clefButton.performSpringAnimation(
+            animation: "swing",
+            duration: 3.0,
+            scaleX: 1.5,
+            scaleY: 1.5
+        )
         
-        self.clefButton.animation = "swing"
-        self.clefButton.scaleX = 1.5
-        self.clefButton.scaleY = 1.5
-        self.clefButton.duration = 3
-        self.clefButton.animate()
-        
-        
-        
-        noteDict = clefDict?.objectForKey(self.clefButton.titleLabel!.text!) as! NSDictionary
+        noteDict = clefDict?.object(forKey: self.clefButton.titleLabel!.text!) as! NSDictionary
         createMusicNote()
     }
     
-    //MARK:變換音樂符號
-    func createMusicNote(){
+    // MARK: - 變換音樂符號
+    func createMusicNote() {
         updateResultLabel()
-        let randomNumber =  Int(arc4random_uniform(UInt32(noteDict.count)))
+        let randomNumber = Int.random(in: 0..<noteDict.count)
         musicNoteKeyArray = noteDict.allKeys as! Array<String>
         musicNote = musicNoteKeyArray[randomNumber]
-
-
-        musicNoteImageView.animation = "fadeIn"
+        
         musicNoteImageView.image = UIImage(named: "\(musicNote!)")
-
-        musicNoteImageView.animate()
-
-//        print("clef:\(musicNote!)")
+        musicNoteImageView.performSpringAnimation(animation: "fadeIn")
     }
 
-    
-    func playSound(path:String){
-        let fileURL = NSURL(fileURLWithPath: path)
-        self.audioPlayer = try? AVAudioPlayer(contentsOfURL: fileURL)
+    // MARK: - Audio Player
+    func playSound(_ path: String) {
+        let fileURL = URL(fileURLWithPath: path)
+        self.audioPlayer = try? AVAudioPlayer(contentsOf: fileURL)
         if let audioPlayer = self.audioPlayer {
             audioPlayer.prepareToPlay()
             audioPlayer.play()
         }
     }
     
-    
-    func createAndLoadInterstitial() -> GADInterstitial {
-        let theInterstitial = GADInterstitial(adUnitID: "ca-app-pub-5200673733349176/8483398845")
-        theInterstitial.delegate = self
+    // MARK: - Google Ads
+    func loadInterstitial() {
+        print("🔄 開始加載插頁式廣告...")
         let request = GADRequest()
-        request.testDevices = ["2e42a901e1bdd3ad2e8d88c2ac74db59"]
-        theInterstitial.loadRequest(request)
-        return theInterstitial
-    }
-    
-    func showAd(){
-        if (self.interstitial.isReady) {
-            self.interstitial.presentFromRootViewController(self)
+        
+        // 根據編譯配置自動選擇廣告 ID
+        #if DEBUG
+        let adUnitID = "ca-app-pub-3940256099942544/4411468910" // 測試廣告 ID
+        print("📱 使用測試廣告 ID (Debug Mode)")
+        #else
+        let adUnitID = "ca-app-pub-5200673733349176/8483398845" // 正式廣告 ID
+        print("📱 使用正式廣告 ID (Release Mode)")
+        #endif
+        
+        GADInterstitialAd.load(
+            withAdUnitID: adUnitID,
+            request: request
+        ) { [weak self] ad, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("❌ 廣告加載失敗: \(error.localizedDescription)")
+                return
+            }
+            print("✅ 廣告加載成功！")
+            // interstitial 已標記為 nonisolated(unsafe)，可以安全地在此處賦值
+            // Google Ads SDK 保證 completion handler 在主線程執行
+            self.interstitial = ad
+            self.interstitial?.fullScreenContentDelegate = self
         }
     }
     
-    func interstitialDidDismissScreen(ad: GADInterstitial!) {
-        self.interstitial = createAndLoadInterstitial()
+    func showAd() {
+        print("📢 嘗試顯示廣告... (錯誤次數: \(errorCount))")
+        if let interstitial = self.interstitial {
+            print("✅ 廣告已就緒，準備顯示")
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("⚠️ 廣告尚未就緒，開始重新加載")
+            loadInterstitial()
+        }
     }
-
+    
+    // MARK: - GADFullScreenContentDelegate
+    nonisolated func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("✅ 廣告已關閉")
+        Task { @MainActor in
+            loadInterstitial()
+        }
+    }
+    
+    nonisolated func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("❌ 廣告顯示失敗: \(error.localizedDescription)")
+        Task { @MainActor in
+            loadInterstitial()
+        }
+    }
+    
+    nonisolated func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("📱 廣告即將顯示")
+    }
+    
+    nonisolated func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        print("👁️ 廣告曝光已記錄")
+    }
 }
 
