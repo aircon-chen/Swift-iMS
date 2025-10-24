@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-eN-KjL">
-                                <rect key="frame" x="-3" y="0.0" width="396" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-eN-KjL">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-fB-H5Y" userLabel="TopArea">
                                 <rect key="frame" x="-3" y="20" width="383" height="121"/>
@@ -233,9 +232,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="6wV-fB-H5Y" secondAttribute="trailing" constant="-21" id="CHL-Al-Tx4"/>
                             <constraint firstItem="6wV-fB-H5Y" firstAttribute="top" secondItem="XTa-vJ-5Pp" secondAttribute="bottom" id="K3X-nD-MDV"/>
                             <constraint firstItem="6wV-fB-H5Y" firstAttribute="leading" secondItem="Jaw-Hn-Wus" secondAttribute="leadingMargin" constant="-19" id="QmY-Z2-HtT"/>
+                            <constraint firstItem="eTn-eN-KjL" firstAttribute="top" secondItem="XTa-vJ-5Pp" secondAttribute="bottom" constant="-118" id="Szy-4L-MTc"/>
                             <constraint firstItem="HpI-T6-cHa" firstAttribute="leading" secondItem="Jaw-Hn-Wus" secondAttribute="leading" constant="-8" id="Wn6-7c-ET3"/>
+                            <constraint firstItem="eTn-eN-KjL" firstAttribute="leading" secondItem="Jaw-Hn-Wus" secondAttribute="leading" id="fD3-4S-T5L"/>
+                            <constraint firstItem="38E-JB-fbH" firstAttribute="top" secondItem="eTn-eN-KjL" secondAttribute="bottom" constant="-68" id="id3-03-oqf"/>
                             <constraint firstAttribute="trailing" secondItem="HpI-T6-cHa" secondAttribute="trailing" constant="-8" id="o8k-KN-u2O"/>
                             <constraint firstItem="38E-JB-fbH" firstAttribute="top" secondItem="HpI-T6-cHa" secondAttribute="bottom" id="uFz-mD-uVk"/>
+                            <constraint firstAttribute="trailing" secondItem="eTn-eN-KjL" secondAttribute="trailing" id="y4b-dc-P2x"/>
                         </constraints>
                     </view>
                 </viewController>
